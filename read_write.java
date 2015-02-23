@@ -12,7 +12,7 @@ public class read_write
         	 {
         	 numb_of_string = Integer.parseInt(args[1]);
         	 count = Integer.parseInt(args[2]);
-        	 } catch (Exception e) {System.out.println("Incorrect input");}
+        	 } catch (Exception e) {System.out.println("Incorrect input"); System.exit(0);}
 	         
            int c =1;
 	       while (bf.hasNext() && c<numb_of_string)
