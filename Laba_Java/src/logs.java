@@ -1,4 +1,7 @@
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 public class logs
 {
     public String getHost() {
@@ -9,11 +12,11 @@ public class logs
 		this.host = host;
 	}
 
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 
@@ -43,20 +46,20 @@ public class logs
 
 	String host;
 	
-	String time;
+	Date time;
 	
 	String request;
 	
 	int reply;
 		
 	int bytes;
-		
-	public void parse (String log)
+	String timePattern = "dd/MMM/yyyy:HH:mm:ss Z";	
+	public void parse (String log) throws ParseException
 	{
 	   String str[] = log.split(" ", 4);
 	   host = str[0];
 	   String substr[] = str[3].split("[\\[\\]]", 3);
-	   time = substr[1];
+	   time = new SimpleDateFormat(timePattern, Locale.US).parse(substr[1]);
 	   substr[2].trim();
 	   request = substr[2].substring(2, substr[2].lastIndexOf('"'));
 	   substr = substr[2].substring(substr[2].lastIndexOf('"')).split(" ");

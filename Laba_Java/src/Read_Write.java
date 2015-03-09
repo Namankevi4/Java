@@ -29,7 +29,7 @@ public class Read_Write
 	{
 		for (int i=numb_of_string; i<=numb_of_string+count; i++)
 		{
-			System.out.println(log.get(i).getHost() + "\t" + log.get(i).getTime() + "\t" + log.get(i).getRequest() + "\t" + log.get(i).getReply() + "\t" + log.get(i).getBytes());
+			System.out.println(log.get(i).getHost() + "\t" + log.get(i).getTime().toString() + "\t" + log.get(i).getRequest() + "\t" + log.get(i).getReply() + "\t" + log.get(i).getBytes());
 		}
 	}
 	public static void output_in_file(ArrayList<logs> log, String filename)
@@ -38,7 +38,7 @@ public class Read_Write
 		{
 			for (logs l : log)
 			{
-				out.write(l.getHost() + "\t    " + l.getTime() + "\t    " + l.getRequest() + "\t    " + l.getReply() + "\t    " + l.getBytes() + '\n');
+				out.write(l.getHost() + "\t    " + l.getTime().toString() + "\t    " + l.getRequest() + "\t    " + l.getReply() + "\t    " + l.getBytes() + '\n');
 			}
 		} catch (Exception e) {System.out.print("Error");}
 	}
