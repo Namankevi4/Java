@@ -53,6 +53,7 @@ public class logs
 	int reply;
 		
 	int bytes;
+	
 	String timePattern = "dd/MMM/yyyy:HH:mm:ss Z";	
 	public void parse (String log) throws ParseException
 	{
