@@ -19,21 +19,9 @@ public class LogProcess implements ILogProcess
 		
 	    reads.input_from_file(args[0], logs);
 	    parse.parse(logs, log);
-	    write.output_in_file(log, args[1]);
-	    Date fromDate =  null;
-		  Date toDate = null;
-		  SimpleDateFormat formate = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ssZ",Locale.ENGLISH);
-		  try 
-		  {
-			  fromDate = formate.parse("01/Aug/1995:00:00:12-0400");
-			  toDate =   formate.parse("01/Aug/1995:00:00:32-0400"); 
-			  
-		  } 
-		  catch (ParseException e) 
-		  {
-			e.printStackTrace();		 
-		  }
-		  System.out.print("\n\nReport "+args[2]+"\n");
+     	 Date  fromDate = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z",Locale.US).parse("01/Jul/1995:00:00:12 -0400");
+		 Date  toDate =   new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z",Locale.US).parse("01/Jul/1995:00:00:32 -0400"); 
+        System.out.print("Report "+args[2]+"\n");
 	    switch(args[2])
 	    {
 		    case "1" : 

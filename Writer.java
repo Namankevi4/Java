@@ -12,6 +12,7 @@ public class Writer implements IWriter
 			for (logs l : log)
 			{
 				out.write(l.getHost() + "\t    " + l.getTime().toString() + "\t    " + l.getRequest() + "\t    " + l.getReply() + "\t    " + l.getBytes() + '\n');
+			
 			}
 		} catch (Exception e) {System.out.print("Error");}
 	}
